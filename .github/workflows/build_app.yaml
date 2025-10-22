@@ -19,17 +19,17 @@ jobs:
       - name: executar maven
         run: mvn clean install -DskipTests
       - name: gerando docker
-        run: docker build -t proffernando/autoservicesb .
+        run: docker build -t gdsf7/autoservicesb .
       - name: login dockerHub
         run: docker login -u ${{secrets.DOCKER_USER}} -p '${{secrets.DOCKER_PASS}}'
       - name: publicar a imagem
-        run: docker push proffernando/autoservicesb
+        run: docker push gfds7/autoservicesb
   instalacao_aws:
     runs-on: self-hosted
     needs: construir
     steps:
       - name: pegar imagem
-        run: sudo docker pull proffernando/autoservicesb
+        run: sudo docker pull gdsf7/autoservicesb
       - name: baixar o docker compose
         uses: actions/checkout@v4
       - name: gerar arquivo de .env
