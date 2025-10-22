@@ -46,6 +46,5 @@ jobs:
         #        run: sudo docker run -t proffernando/autoservicesb
         run: sudo docker compose up -d --remove-orphans
 
-        postgres
-        autoservicesb-senha
-        autoservicesb
+
+
