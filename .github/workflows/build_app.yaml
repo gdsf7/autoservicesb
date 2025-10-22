@@ -21,7 +21,7 @@ jobs:
       - name: gerando docker
         run: docker build -t gdsf7/autoservicesb .
       - name: login dockerHub
-        run: docker login -u 'SECRET_USER' -p 'SECRET_PASS'
+        run: docker login -u ${{secrets.DOCKER_USER}} -p '${{secrets.DOCKER_PASS}}'
       - name: publicar a imagem
         run: docker push gdsf7/autoservicesb
  # instalacao_aws:
